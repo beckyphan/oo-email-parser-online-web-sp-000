@@ -13,7 +13,7 @@ class EmailParser
   end
   
   def parse
-    @@email_array = @emails.split(/[,\s|\s]/)
+    @@email_array = @emails.split(/[,|\s]/)
     alpha = @@email_array.sort
     alpha.each do |email|
       if @@unique_emails.include?(email)
