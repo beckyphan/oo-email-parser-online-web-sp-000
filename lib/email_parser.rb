@@ -14,7 +14,6 @@ class EmailParser
   
   def parse
     @@email_array = @emails.split(/[,| ]/)
-    alpha = @@email_array.sort
     alpha.each do |email|
       if @@unique_emails.include?(email)
         nil 
@@ -24,4 +23,5 @@ class EmailParser
     end 
     @@unique_emails
   end
+  
 end
