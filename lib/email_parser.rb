@@ -6,6 +6,7 @@
 class EmailParser
   attr_accessor :emails
   @@email_array = []
+  @@unique_emails = []
   
   def initialize(emails)
     @emails = emails
@@ -13,5 +14,14 @@ class EmailParser
   
   def parse
     @@email_array = @emails.split(/[(,\s|\s)]/)
+    alpha = @@email_array.sort
+    alpha.each do |email|
+      if @@unique_emails.include?(email)
+        nil 
+      else 
+        @@unique_emails << email 
+      end 
+    end 
+    @@unique_emails
   end
 end
